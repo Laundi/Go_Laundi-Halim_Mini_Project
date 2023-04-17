@@ -4,23 +4,25 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+
 	"github.com/gorilla/mux"
 	"gorm.io/gorm"
 )
 
 type Server struct {
-	DB *gorm.DB
-	Router *mux.Router
+	DB 		*gorm.DB
+	Router 	*mux.Router
 }
 
 func (server *Server) Initialize() {
 	fmt.Println(a...: "Welcome to HalimStore")
 
 	server.Router = mux.NewRouter()
+	server.initializeRoutes()
 }
 
 func (server *Server) Run(addr string) {
-	fmt.Println(a...: "Listening to port %s", addr)
+	fmt.Println(format...: "Listening to port %s", addr)
 	log.Fatal(http.ListenAndServe(addr, server.Router))
 }
 
